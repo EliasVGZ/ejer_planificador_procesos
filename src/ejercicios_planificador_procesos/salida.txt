@@ -1,0 +1,27 @@
+Microsoft Windows [Versi¢n 10.0.19045.3086]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1>MKDIR NUEVO
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1>CD NUEVO
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO>ECHO CREO UN FICHERO EN CARPETA NUEVA > Mifichero.txt
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO>DIR
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 0206-9D3E
+
+ Directorio de C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO
+
+27/10/2023  14:25    <DIR>          .
+27/10/2023  14:25    <DIR>          ..
+27/10/2023  14:25                35 Mifichero.txt
+               1 archivos             35 bytes
+               2 dirs  43.052.244.992 bytes libres
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO>DIRR
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO>ECHO FIN COMANDOS 
+FIN COMANDOS 
+
+C:\Users\a22eliassvf\Documents\Programacion de Servicios y Procesos\Primero ejemplos\EJEMPLO1\ejemplo1\NUEVO>
