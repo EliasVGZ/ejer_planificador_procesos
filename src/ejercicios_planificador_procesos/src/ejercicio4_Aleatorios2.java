@@ -1,9 +1,6 @@
-package planificador_procesos.src;
+package ejercicios_planificador_procesos.src;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintStream;
+import java.io.*;
 
 public class ejercicio4_Aleatorios2 {
 
@@ -14,12 +11,17 @@ public class ejercicio4_Aleatorios2 {
 
     public static void main(String[] args) {
 
-        String line;
+        String line = null;
+        File fichero = new File("src\\ejecutables\\cadenasEjercicio4.txt"); //utilizamos aquí segundo argumento recibido
 
-        try{
+        FileWriter fw = null;
+
+        try {
 
             Process hijo = new ProcessBuilder("src\\ejecutables\\aleatorioshijo.exe").start();
             Process hijo2 = new ProcessBuilder("src\\ejecutables\\mayusculashijo.exe").start();
+
+            fw = new FileWriter(fichero);
 
             //br es un stream de entrada conectado  (mediante una pipe) a la salida estándar del proceso hijo
             // el proceso aleatorios (padre) leerá en él la información que el proceso hijo le deja.
@@ -35,7 +37,7 @@ public class ejercicio4_Aleatorios2 {
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
             while (true) {
-                System.out.println("Introduce una cadena (o 'fin' para terminar): ");
+                System.out.println("Introduce una cadena para el procesohijo convierta esta cadena en un numero aleatorio(o 'fin' para terminar): ");
                 String input = in.readLine();
 
 
@@ -51,10 +53,10 @@ public class ejercicio4_Aleatorios2 {
                 //aqui se lee el numero aleatorio que se genero y se le asigna a N
                 int n = Integer.parseInt(brHijo.readLine());
                 //ESTE SOUT ES PARA VERIFICAR QUE NUMERO ALEATORIO HA SALIDO
-                System.out.println("numero aleatorio generado por el proceso hijo:   -->   "+ n);
+                System.out.println("numero aleatorio generado por el proceso hijo:   -->   " + n);
 
                 for (int i = 0; i < n; i++) {
-                    System.out.println("Introduce una cadena para el proceso hijo2: ");
+                    System.out.println("Introduce una cadena para que  el proceso hijo2 las pase a mayusculas: ");
                     String input2 = in.readLine();
 
                     psHijo2.println(input2);
@@ -66,11 +68,29 @@ public class ejercicio4_Aleatorios2 {
                     if ((line = brHijo2.readLine()) != null) {
                         System.out.println(line);
                     }
+
+                    if (line.compareTo("kk") != 0) {
+                        fw.write(line + "\r\n");  // la cadena procesada la escribo en el fichero
+                    }
                 }
+
+                System.out.println("Introduce 'ff' para terminar o cualquier otra cadena para continuar: ");
+                String inputTerminar = in.readLine();
+                if (inputTerminar.equals("ff")) {
+                    break;
+                }
+
             }
 
-        }catch (IOException ex) {
+        } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        }finally {
+            try {
+                if (fw != null) {
+                    fw.close();  // cierro fichero
+                }
+            } catch (IOException ex) {
+            }
         }
 
     }
