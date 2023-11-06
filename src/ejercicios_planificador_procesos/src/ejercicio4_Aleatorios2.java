@@ -11,7 +11,7 @@ public class ejercicio4_Aleatorios2 {
 
     public static void main(String[] args) {
 
-        String line = null;
+        String line;
         File fichero = new File("src\\ejecutables\\cadenasEjercicio4.txt"); //utilizamos aquí segundo argumento recibido
 
         FileWriter fw = null;
